@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Personal Portfolio Website
+# Personal Portfolio Website
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e38f457-74ab-48bd-844c-7391aca6336f/deploy-status)](https://ridwansuryantara.netlify.app)
@@ -10,17 +10,14 @@ A modern, responsive personal portfolio website built to showcase my journey as 
 
 This project serves as a digital resume and a central hub for my works, including **Fuenzer Studio** game projects and **Fuenzer Studio** Android application projects.
 
-## 📸 Screenshots
-
-![Portfolio Hero Section](./path/to/your/screenshot.png)
-*(Note: Upload your screenshots to an 'assets' folder or root and link them here)*
-
 ## ✨ Features
 
 * **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices.
 * **Modern UI/UX**: Clean aesthetic with Dark Mode support.
 * **Project Showcase**: Dynamic grid layout to display GitHub repos and live projects.
 * **Tech Stack Integration**: Built with modern web technologies for performance.
+
+</div>
 
 ## 🛠️ Tech Stack
 
