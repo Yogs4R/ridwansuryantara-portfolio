@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Personal Portfolio Website
+# Personal Portfolio Website
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6e38f457-74ab-48bd-844c-7391aca6336f/deploy-status)](https://ridwansuryantara.netlify.app)
