@@ -10,10 +10,7 @@ A modern, responsive personal portfolio website built to showcase my journey as 
 
 This project serves as a digital resume and a central hub for my works, including **Fuenzer Studio** game projects and **Fuenzer Studio** Android application projects.
 
-## 📸 Screenshots
-
-![Portfolio Hero Section](./path/to/your/screenshot.png)
-*(Note: Upload your screenshots to an 'assets' folder or root and link them here)*
+</div>
 
 ## ✨ Features
 

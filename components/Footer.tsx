@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail } from 'lucide-react';
+import { FaXTwitter as Twitter, FaGithub as Github, FaLinkedin as Linkedin, FaInstagram as Instagram, FaFacebook as Facebook } from 'react-icons/fa6'; 
 
 const Footer: React.FC = () => {
   const socials = [
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg', url: '#', label: 'GitHub', color: 'hover:bg-[#181717] hover:text-white' },
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/linkedin.svg', url: '#', label: 'LinkedIn', color: 'hover:bg-[#0A66C2] hover:text-white' },
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/gmail.svg', url: 'mailto:hello@alexdev.com', label: 'Email', color: 'hover:bg-[#EA4335] hover:text-white' },
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/instagram.svg', url: '#', label: 'Instagram', color: 'hover:bg-[#E4405F] hover:text-white' },
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/x.svg', url: '#', label: 'Twitter/X', color: 'hover:bg-black hover:text-white' },
-    { icon: 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/facebook.svg', url: '#', label: 'Facebook', color: 'hover:bg-[#1877F2] hover:text-white' },
+    { icon: Github, url: 'http://github.com/Yogs4R', label: 'GitHub', color: 'hover:bg-[#181717] hover:text-white' },
+    { icon: Linkedin, url: 'https://www.linkedin.com/in/ridwansuryantara/', label: 'LinkedIn', color: 'hover:bg-[#0A66C2] hover:text-white' },
+    { icon: Mail, url: 'mailto:ridwansuryantara@gmail.com', label: 'Email', color: 'hover:bg-[#EA4335] hover:text-white' },
+    { icon: Instagram, url: 'https://www.instagram.com/r.yogss', label: 'Instagram', color: 'hover:bg-[#E4405F] hover:text-white' },
+    { icon: Twitter, url: 'https://x.com/Yogs4R', label: 'Twitter/X', color: 'hover:bg-black hover:text-white' },
+    { icon: Facebook, url: 'https://www.facebook.com/ridwan.suryantara', label: 'Facebook', color: 'hover:bg-[#1877F2] hover:text-white' },
   ];
 
   return (
@@ -17,21 +19,37 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter">AlexDev</h2>
+            <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter">Ridwan Suryantara</h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-              Building digital experiences that matter. Focused on performance, accessibility, and modern web technologies.
+              Everything is an idea. Imagination to reality.
             </p>
             <div className="flex flex-wrap gap-3">
-              {socials.map((social) => (
-                <a 
-                  key={social.label}
-                  href={social.url} 
-                  className={`size-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-surface-dark transition-all duration-300 group shadow-sm ${social.color}`}
-                  aria-label={social.label}
+              {socials.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a 
+                    key={social.label}
+                    href={social.url}
+                    aria-label={social.label}
+                    className={`
+                      size-10 flex items-center justify-center rounded-lg 
+                      shadow-sm
+                      bg-gray-100 text-slate-600 
+                      dark:bg-slate-800 dark:text-white
+                      dark:border dark:border-slate-700
+                      transition-all duration-300 ease-out
+                      hover:-translate-y-1 
+                      hover:scale-110
+                      hover:shadow-lg
+                      active:scale-90 
+                      active:duration-100
+                      ${social.color}
+                    `}
                 >
-                  <img src={social.icon} alt={social.label} className="size-5 dark:invert group-hover:invert-0 group-hover:brightness-0 transition-all" />
+                  <IconComponent className="size-5 dark:invert group-hover:invert-0 group-hover:brightness-0 transition-all" aria-hidden="true" />
                 </a>
-              ))}
+              );
+            })}
             </div>
           </div>
 
@@ -48,12 +66,12 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-slate-900 dark:text-white font-bold mb-6">Services</h3>
+            <h3 className="text-slate-900 dark:text-white font-bold mb-6">Skills</h3>
             <ul className="flex flex-col gap-3">
-              <li className="text-slate-600 dark:text-slate-400 text-sm">Web Development</li>
-              <li className="text-slate-600 dark:text-slate-400 text-sm">Mobile App Dev</li>
-              <li className="text-slate-600 dark:text-slate-400 text-sm">UI/UX Design</li>
-              <li className="text-slate-600 dark:text-slate-400 text-sm">Cloud Architecture</li>
+              <li className="text-slate-600 dark:text-slate-400 text-sm">Data Analysis</li>
+              <li className="text-slate-600 dark:text-slate-400 text-sm">Android Developer</li>
+              <li className="text-slate-600 dark:text-slate-400 text-sm">n8n Enthusiast</li>
+              <li className="text-slate-600 dark:text-slate-400 text-sm">Roblox Developer</li>
             </ul>
           </div>
 
@@ -64,18 +82,19 @@ const Footer: React.FC = () => {
               Have a project in mind? Let's discuss how we can work together.
             </p>
             <a 
-              href="mailto:hello@alexdev.com" 
+              href="mailto:ridwansuryantara@gmail.com" 
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-slate-900 font-bold text-sm transition-all shadow-lg shadow-primary/20 hover:-translate-y-1"
+              aria-label="Email Me"
             >
               <span className="material-symbols-outlined text-[18px]">mail</span>
-              hello@alexdev.com
+              ridwansuryantara@gmail.com
             </a>
           </div>
         </div>
 
         <div className="border-t border-gray-200 dark:border-border-dark pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 dark:text-slate-500 text-sm text-center md:text-left">
-            © 2023 AlexDev. All rights reserved.
+            © {new Date().getFullYear()} Ridwan Suryantara. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-slate-500 dark:text-slate-500">
             <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
