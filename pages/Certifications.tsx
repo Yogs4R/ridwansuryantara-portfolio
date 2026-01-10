@@ -117,39 +117,27 @@ const Certifications: React.FC = () => {
         ) : (
           <>
             {professionalCerts.length > 0 && (
-              <section>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="material-symbols-outlined text-primary text-2xl">verified</span>
-                  <h2 className="text-slate-900 dark:text-white text-2xl font-black">Professional Certifications</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {professionalCerts.map((cert) => <CertCard key={cert.id} cert={cert} />)}
-                </div>
-              </section>
+              <CertSection 
+                title="Professional Certifications" 
+                icon="verified" 
+                data={professionalCerts} 
+              />
             )}
 
             {courseCerts.length > 0 && (
-              <section>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="material-symbols-outlined text-primary text-2xl">school</span>
-                  <h2 className="text-slate-900 dark:text-white text-2xl font-black">Course Certifications</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {courseCerts.map((cert) => <CertCard key={cert.id} cert={cert} />)}
-                </div>
-              </section>
+              <CertSection 
+                title="Course Certifications" 
+                icon="school" 
+                data={courseCerts} 
+              />
             )}
 
             {projectCerts.length > 0 && (
-              <section>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="material-symbols-outlined text-primary text-2xl">architecture</span>
-                  <h2 className="text-slate-900 dark:text-white text-2xl font-black">Project Certifications</h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {projectCerts.map((cert) => <CertCard key={cert.id} cert={cert} />)}
-                </div>
-              </section>
+              <CertSection 
+                title="Project Certifications" 
+                icon="architecture" 
+                data={projectCerts} 
+              />
             )}
           </>
         )}
@@ -158,7 +146,54 @@ const Certifications: React.FC = () => {
   );
 };
 
-const CertCard = ({ cert }: { cert: Certification }) => (
+const CertSection = ({ title, icon, data }: { title: string, icon: string, data: Certification[] }) => {
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  
+  const startIndex = (page - 1) * itemsPerPage;
+  const currentItems = data.slice(startIndex, startIndex + itemsPerPage);
+
+  return (
+    <section>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div className="flex items-center gap-3">
+          <span className="material-symbols-outlined text-primary text-2xl">{icon}</span>
+          <h2 className="text-slate-900 dark:text-white text-2xl font-black">{title}</h2>
+        </div>
+        
+        {/* Simple Arrows Pagination */}
+        {totalPages > 1 && (
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <button 
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page === 1}
+              className="size-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#1a2633] hover:bg-gray-200 dark:hover:bg-[#2a3b4d] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            >
+              <span className="material-symbols-outlined text-sm">arrow_back</span>
+            </button>
+            <span className="text-xs font-bold text-slate-500 dark:text-slate-400 px-2 whitespace-nowrap">
+              {page} / {totalPages}
+            </span>
+            <button 
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page === totalPages}
+              className="size-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#1a2633] hover:bg-gray-200 dark:hover:bg-[#2a3b4d] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            >
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+        )}
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {currentItems.map((cert) => <CertCard key={cert.id} cert={cert} />)}
+      </div>
+    </section>
+  );
+};
+
+const CertCard: React.FC<{ cert: Certification }> = ({ cert }) => (
   <div className={`group flex flex-col bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 transition-all duration-300 overflow-hidden ${cert.hoverColor ? cert.hoverColor : 'hover:border-primary/50 hover:shadow-primary/20'} hover:-translate-y-1`}>
     <div className="h-40 w-full bg-cover bg-center relative" style={{ backgroundImage: `url("${cert.imageUrl}")` }}>
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>

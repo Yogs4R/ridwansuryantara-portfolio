@@ -12,14 +12,18 @@ This project serves as a digital resume and a central hub for my works, includin
 
 </div>
 
+<div align="center">
 ## ✨ Features
+</div>
 
 * **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices.
 * **Modern UI/UX**: Clean aesthetic with Dark Mode support.
 * **Project Showcase**: Dynamic grid layout to display GitHub repos and live projects.
 * **Tech Stack Integration**: Built with modern web technologies for performance.
 
+<div align="center">
 ## 🛠️ Tech Stack
+</div>
 
 This portfolio is built using the following technologies:
 
@@ -32,7 +36,9 @@ This portfolio is built using the following technologies:
 | **Automation** | ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white) |
 | **Deployment** | ![Netlify](https://img.shields.io/badge/netlify-%2300C7B7.svg?style=for-the-badge&logo=netlify&logoColor=white) |
 
+<div align="center">
 ## Getting Started
+</div>
 
 To run this project locally on your machine, follow these steps:
 

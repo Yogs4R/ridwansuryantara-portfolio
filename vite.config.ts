@@ -25,6 +25,7 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      assetsInclude: ['**/*.docx', '**/*.pdf', '**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.svg'],
     };
 });

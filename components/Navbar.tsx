@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS } from '../constants';
+import { RESUME_ASSETS } from '../assets';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,17 +36,27 @@ const Navbar: React.FC = () => {
   };
 
   const handleDownload = (type: 'image' | 'word' | 'pdf') => {
-    const content = `This is a placeholder content for the ${type.toUpperCase()} version of AlexDev's Resume.`;
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
+    let fileUrl = '';
+    let downloadName = '';
+
+    if (type === 'pdf') {
+        fileUrl = RESUME_ASSETS.resumepdf;
+        downloadName = 'Ridwan_Resume.pdf';
+    } else if (type === 'word') {
+        fileUrl = RESUME_ASSETS.resumeword;
+        downloadName = 'Ridwan_Resume.docx';
+    } else {
+        fileUrl = RESUME_ASSETS.resumeimage;
+        downloadName = 'Ridwan_Resume.jpg';
+    }
+
     const a = document.createElement('a');
     a.style.display = 'none';
-    a.href = url;
-    let extension = type === 'image' ? 'png' : type === 'word' ? 'docx' : 'pdf';
-    a.download = `AlexDev_Resume.${extension}`;
+    a.href = fileUrl;
+    a.download = downloadName; 
     document.body.appendChild(a);
     a.click();
-    window.URL.revokeObjectURL(url);
+    // Clean up
     document.body.removeChild(a);
     setIsResumeOpen(false);
     setIsMenuOpen(false);
@@ -56,7 +67,7 @@ const Navbar: React.FC = () => {
       <div className="w-full px-6 md:px-12 lg:px-16">
         <header className="flex items-center justify-between whitespace-nowrap py-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-slate-900 dark:text-white text-xl font-black leading-tight tracking-tighter">AlexDev</h2>
+            <h2 className="text-slate-900 dark:text-white text-xl font-black leading-tight tracking-tighter">Ridwan Suryantara</h2>
           </div>
           
           <div className="flex items-center gap-4 lg:gap-8">

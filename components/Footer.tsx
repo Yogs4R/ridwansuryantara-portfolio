@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
-import { FaXTwitter as Twitter, FaGithub as Github, FaLinkedin as Linkedin, FaInstagram as Instagram, FaFacebook as Facebook } from 'react-icons/fa6'; 
+import { FaXTwitter as Twitter, FaGithub as Github, FaLinkedin as Linkedin, FaInstagram as Instagram, FaFacebook as Facebook } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
   const socials = [
-    { icon: Github, url: 'http://github.com/Yogs4R', label: 'GitHub', color: 'hover:bg-[#181717] hover:text-white' },
+    { icon: Github, url: 'https://github.com/Yogs4R', label: 'GitHub', color: 'hover:bg-[#181717] hover:text-white' },
     { icon: Linkedin, url: 'https://www.linkedin.com/in/ridwansuryantara/', label: 'LinkedIn', color: 'hover:bg-[#0A66C2] hover:text-white' },
     { icon: Mail, url: 'mailto:ridwansuryantara@gmail.com', label: 'Email', color: 'hover:bg-[#EA4335] hover:text-white' },
     { icon: Instagram, url: 'https://www.instagram.com/r.yogss', label: 'Instagram', color: 'hover:bg-[#E4405F] hover:text-white' },
