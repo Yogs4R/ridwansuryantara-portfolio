@@ -71,10 +71,32 @@ export const PROJECTS: Project[] = [
     demoUrl: '#',
     codeUrl: '#',
     status: 'Done'
+  },
+  {
+    id: '7',
+    title: 'Fitness Tracker Pro',
+    description: 'Mobile app to track workouts, nutrition, and sleep with social sharing features and progress visualization.',
+    tags: ['React Native', 'Redux'],
+    imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1000&auto=format&fit=crop',
+    category: 'Mobile Apps',
+    demoUrl: '#',
+    codeUrl: '#',
+    status: 'Done'
+  },
+  {
+    id: '8',
+    title: 'Rust CLI Tool',
+    description: 'A high-performance command line tool for efficient file management and automation tasks.',
+    tags: ['Rust', 'CLI'],
+    imageUrl: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1000&auto=format&fit=crop',
+    category: 'Open Source',
+    codeUrl: '#',
+    status: 'In Progress'
   }
 ];
 
 export const CERTIFICATIONS: Certification[] = [
+  // Professional Certifications
   {
     id: '1',
     title: 'AWS Certified Solutions Architect',
@@ -104,6 +126,49 @@ export const CERTIFICATIONS: Certification[] = [
     credentialUrl: '#'
   },
   {
+    id: 'prof3',
+    title: 'Certified Kubernetes Administrator',
+    issuer: 'CNCF',
+    date: 'Issued Nov 2022',
+    year: '2022',
+    type: 'Professional',
+    description: 'Skills regarding the administration of Kubernetes clusters.',
+    imageUrl: 'https://images.unsplash.com/photo-1667372393119-38663e420360?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-blue-600',
+    icon: 'dhcp',
+    hoverColor: 'hover:border-[#326CE5] hover:ring-1 hover:ring-[#326CE5]',
+    credentialUrl: '#'
+  },
+  {
+    id: 'prof4',
+    title: 'Microsoft Certified: Azure Fundamentals',
+    issuer: 'Microsoft',
+    date: 'Issued Oct 2022',
+    year: '2022',
+    type: 'Professional',
+    description: 'Foundational knowledge of cloud services and how those services are provided with Azure.',
+    imageUrl: 'https://images.unsplash.com/photo-1633419461186-7d40a2307e68?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-blue-400',
+    icon: 'cloud_queue',
+    hoverColor: 'hover:border-[#0078D4] hover:ring-1 hover:ring-[#0078D4]',
+    credentialUrl: '#'
+  },
+  {
+    id: 'prof5',
+    title: 'HashiCorp Certified: Terraform Associate',
+    issuer: 'HashiCorp',
+    date: 'Issued Sep 2022',
+    year: '2022',
+    type: 'Professional',
+    description: 'Infrastructure as Code concepts and Terraform CLI workflow.',
+    imageUrl: 'https://images.unsplash.com/photo-1667372393086-9d4001d51cf1?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-purple-500',
+    icon: 'storage',
+    hoverColor: 'hover:border-[#7B42BC] hover:ring-1 hover:ring-[#7B42BC]',
+    credentialUrl: '#'
+  },
+  // Course Certifications
+  {
     id: '3',
     title: 'Advanced React and Redux',
     issuer: 'Udemy',
@@ -129,6 +194,48 @@ export const CERTIFICATIONS: Certification[] = [
     categoryColor: 'bg-emerald-600',
     icon: 'data_object',
     hoverColor: 'hover:border-emerald-500 hover:ring-1 hover:ring-emerald-500',
+    credentialUrl: '#'
+  },
+  {
+    id: 'course3',
+    title: 'Vue.js - The Complete Guide',
+    issuer: 'Udemy',
+    date: 'Completed Aug 2021',
+    year: '2021',
+    type: 'Course',
+    description: 'Building Vue.js applications from scratch.',
+    imageUrl: 'https://images.unsplash.com/photo-1655720406100-3f3c2b189736?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-green-500',
+    icon: 'view_agenda',
+    hoverColor: 'hover:border-[#4FC08D] hover:ring-1 hover:ring-[#4FC08D]',
+    credentialUrl: '#'
+  },
+  {
+    id: 'course4',
+    title: 'Modern GraphQL with Node.js',
+    issuer: 'Udemy',
+    date: 'Completed Jul 2021',
+    year: '2021',
+    type: 'Course',
+    description: 'Building scalable APIs with GraphQL.',
+    imageUrl: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-pink-600',
+    icon: 'api',
+    hoverColor: 'hover:border-[#E10098] hover:ring-1 hover:ring-[#E10098]',
+    credentialUrl: '#'
+  },
+  {
+    id: 'course5',
+    title: 'Complete Python Bootcamp',
+    issuer: 'Udemy',
+    date: 'Completed Jun 2021',
+    year: '2021',
+    type: 'Course',
+    description: 'From zero to hero in Python.',
+    imageUrl: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1000&auto=format&fit=crop',
+    categoryColor: 'bg-yellow-600',
+    icon: 'terminal',
+    hoverColor: 'hover:border-[#3776AB] hover:ring-1 hover:ring-[#3776AB]',
     credentialUrl: '#'
   },
   // Project Certifications
